@@ -521,7 +521,12 @@ export default function DomeGallery({
       overlay.remove();
       viewerRef.current?.querySelectorAll('.romantic-label').forEach(label => {
         (label as HTMLElement).style.opacity = '0';
-        (label as HTMLElement).style.transform = (label as HTMLElement).classList.contains('label-left') ? 'translateX(-20px)' : 'translateX(20px)';
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+          (label as HTMLElement).style.transform = (label as HTMLElement).classList.contains('label-left') ? 'translateY(-20px)' : 'translateY(20px)';
+        } else {
+          (label as HTMLElement).style.transform = (label as HTMLElement).classList.contains('label-left') ? 'translateX(-20px)' : 'translateX(20px)';
+        }
         setTimeout(() => label.remove(), enlargeTransitionMs);
       });
       rootRef.current!.appendChild(animatingOverlay);
@@ -713,9 +718,9 @@ export default function DomeGallery({
     const checkAndShowLabels = () => {
       if (rootRef.current?.getAttribute('data-enlarging') === 'true') {
         labelLeft.style.opacity = '1';
-        labelLeft.style.transform = 'translateX(0)';
+        labelLeft.style.transform = 'translate(0, 0)';
         labelRight.style.opacity = '1';
-        labelRight.style.transform = 'translateX(0)';
+        labelRight.style.transform = 'translate(0, 0)';
       } else {
         labelLeft.remove();
         labelRight.remove();
@@ -846,10 +851,21 @@ export default function DomeGallery({
 
     @media (max-width: 768px) {
       .romantic-label {
-        font-size: 1.5rem;
+        font-size: 2.2rem;
+        left: 0;
+        right: 0;
+        text-align: center;
+        width: 100%;
       }
-      .label-left { left: 2%; }
-      .label-right { right: 2%; }
+      .label-left {
+        top: 12%;
+        transform: translateY(-20px);
+      }
+      .label-right {
+        top: auto;
+        bottom: 12%;
+        transform: translateY(20px);
+      }
     }
   `;
 

@@ -70,11 +70,17 @@ npm run build
 npm run start
 ```
 
-## 🛠️ Built With
-- [Next.js 15](https://nextjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Lucide React](https://lucide.dev/)
+## 🛠️ Tech Stack & Languages
+
+This project is built using modern web technologies to ensure a smooth and premium experience:
+
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Library**: [React 19](https://react.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/) (for type-safe and robust code)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) (for modern glassmorphic UI)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) (for fluid and organic transitions)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Fonts**: [Google Fonts (Playfair Display & Geist)](https://fonts.google.com/)
 
 ---
 Made with ❤️ by DzarelDeveloper
